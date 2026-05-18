@@ -1,11 +1,11 @@
 const NavbarLogo = () => {
   return (
-    <div>
-      <h1 className="text-white  text-2xl sm:hidden md:block">
-       Md. Mursalin Hasan Nirob
-      </h1>
-      <h1 className="text-white font-special font-extrabold text-4xl md:hidden sm:block">
-        AQ
+    <div className="flex items-center gap-3">
+      <span className="flex h-10 w-10 items-center justify-center rounded-full bg-cyan text-sm font-black text-black">
+        MN
+      </span>
+      <h1 className="text-lg font-bold text-white sm:hidden md:block">
+        Mursalin Nirob
       </h1>
     </div>
   );

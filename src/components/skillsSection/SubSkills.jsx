@@ -1,12 +1,18 @@
 const SubSkills = () => {
   return (
-    <div className="border-y-2 border-lightGrey relative ">
-      <div className="absolute bg-gradient-to-r from-orange to-cyan opacity-50 w-full h-full"></div>
+    <div className="relative h-[260px] overflow-hidden border-y border-white/10 md:h-[360px]">
+      <div className="absolute inset-0 z-10 bg-gradient-to-r from-black/85 via-black/35 to-cyan/35"></div>
       <img
         src="images/subSkills.jpg"
         alt="subSkills image"
-        className=""
+        className="h-full w-full object-cover"
       />
+      <div className="absolute inset-0 z-20 mx-auto flex max-w-[1200px] items-center px-4">
+        <p className="max-w-[520px] text-3xl font-bold leading-tight text-white md:text-5xl">
+          Building apps with thoughtful UI, reliable data, and maintainable
+          code.
+        </p>
+      </div>
     </div>
   );
 };

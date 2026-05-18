@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 
 const ContactForm = () => {
@@ -27,7 +27,7 @@ const ContactForm = () => {
           setEmail("");
           setName("");
           setMessage("");
-          setSuccess("Message Sent Succesfully");
+          setSuccess("Message sent successfully.");
         },
         (error) => {
           console.log("FAILED...", error.text);
@@ -44,7 +44,7 @@ const ContactForm = () => {
           name="from_name"
           placeholder="Your Name"
           required
-          className="h-12 rounded-lg bg-lightBrown px-2"
+          className="h-12 rounded-lg border border-white/10 bg-black/35 px-4 text-white outline-none transition-colors duration-300 placeholder:text-lightGrey focus:border-cyan"
           value={name}
           onChange={handleName}
         />
@@ -53,7 +53,7 @@ const ContactForm = () => {
           name="from_email"
           placeholder="Your Email"
           required
-          className="h-12 rounded-lg bg-lightBrown px-2"
+          className="h-12 rounded-lg border border-white/10 bg-black/35 px-4 text-white outline-none transition-colors duration-300 placeholder:text-lightGrey focus:border-cyan"
           value={email}
           onChange={handleEmail}
         />
@@ -64,13 +64,13 @@ const ContactForm = () => {
           cols="50"
           placeholder="Message"
           required
-          className=" rounded-lg bg-lightBrown p-2"
+          className="rounded-lg border border-white/10 bg-black/35 p-4 text-white outline-none transition-colors duration-300 placeholder:text-lightGrey focus:border-cyan"
           value={message}
           onChange={handleMessage}
         />
         <button
           type="submit"
-          className="w-full rounded-lg border border-cyan text-white h-12 font-bold text-xl hover:bg-darkCyan bg-cyan transition-all duration-500"
+          className="h-12 w-full rounded-lg border border-cyan bg-cyan text-xl font-bold text-black transition-all duration-300 hover:border-orange hover:bg-orange"
         >
           Send
         </button>

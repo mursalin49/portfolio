@@ -1,8 +1,8 @@
 const ExperienceInfo = ({ number, text }) => {
   return (
-    <div className="flex flex-col justify-center items-center">
-      <p className="font-bold text-6xl text-cyan">{number}</p>
-      <p className="font-bold text-xl text-lightGrey uppercase -mt-4">{text}</p>
+    <div className="flex flex-col items-center justify-center">
+      <p className="text-5xl font-bold text-cyan">{number}</p>
+      <p className="mt-1 text-sm font-bold uppercase text-lightGrey">{text}</p>
     </div>
   );
 };

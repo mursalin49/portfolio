@@ -1,72 +1,34 @@
 import ProjectsText from "./ProjectsText";
 import SingleProject from "./SingleProject";
-import { motion } from "framer-motion";
-import { fadeIn } from "../../framerMotion/variants";
-
-const projects = [
-  {
-    name: "IoT-Based Plant Monitoring System using Flutter",
-    year: "Mar2025",
-    align: "right",
-    image: "images/plant.png",
-    link: "https://github.com/mursalin49/Plant-Monitoring-App",
-  },
-  {
-    name: "Social Service Application",
-    year: "Sept2025",
-    align: "left",
-    image: "images/so.jpg",
-    link: "https://github.com/mursalin49/social-service",
-  },
-  {
-    name: "t20_worldCup_2024",
-    year: "Jan2024",
-    align: "right",
-    image: "images/icc.png",
-    link: "https://github.com/mursalin49/t20_worldCup_2024/tree/main",
-  },
-  {
-    name: "News App",
-    year: "May2024",
-    align: "left",
-    image: "images/news.jpg",
-    link: "https://github.com/mursalin49/News_App",
-  },
-    {
-    name: "Weather App",
-    year: "2024",
-    align: "right",
-    image: "images/weather.jpg",
-    link: "https://github.com/mursalin49/Weather_App",
-  },
-];
+import { projects } from "../../data/portfolioData";
+import Reveal from "../common/Reveal";
 
 const ProjectsMain = () => {
   return (
-    <div id="projects" className="max-w-[1200px] mx-auto px-4">
-      <motion.div
-        variants={fadeIn("top", 0)}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: false, amount: 0.7 }}
-      >
+    <section id="projects" className="mx-auto max-w-[1200px] px-4 py-24">
+      <Reveal direction="up" amount={0.1}>
         <ProjectsText />
-      </motion.div>
-      <div className="flex flex-col gap-20 max-w-[900px] mx-auto mt-12">
-        {projects.map((project, index) => {
+      </Reveal>
+      <div className="mx-auto mt-12 flex max-w-[980px] flex-col gap-8">
+        {projects.map((project) => {
           return (
             <SingleProject
-              key={index}
+              key={project.name}
               name={project.name}
               year={project.year}
               align={project.align}
               image={project.image}
-              link={project.link}
+              apkLink={project.apkLink}
+              githubLink={project.githubLink}
+              type={project.type}
+              description={project.description}
+              accent={project.accent}
+              visualLabel={project.visualLabel}
             />
           );
         })}
       </div>
-    </div>
+    </section>
   );
 };
 

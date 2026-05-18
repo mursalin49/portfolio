@@ -1,60 +1,33 @@
 import { Link } from "react-scroll";
+import { navLinks } from "../../data/portfolioData";
 
 const FooterMain = () => {
-  const footerLinks = [
-    {
-      name: "About Me",
-      section: "about",
-    },
-    {
-      name: "Skills",
-      section: "skills",
-    },
-    {
-      name: "Education",
-      section: "education",
-    },
-    {
-      name: "Experience",
-      section: "experience",
-    },
-    {
-      name: "Projects",
-      section: "projects",
-    },
-    {
-      name: "Contact",
-      section: "contact",
-    },
-  ];
   return (
-    <div className="px-4">
-      <div className="w-full h-[1px] bg-lightGrey mt-24"></div>
-      <div className="md:flex justify-between mt-4 max-w-[1200px] mx-auto sm:hidden">
-        <p className="text-3xl text-lightGrey ">Md. Mursalin Hasan Nirob</p>
-        <ul className="flex gap-4 text-lightGrey text-xl">
-          {footerLinks.map((item, index) => {
-            return (
-              <li key={index}>
-                <Link
-                  spy={true}
-                  smooth={true}
-                  duration={500}
-                  offset={-120}
-                  to={item.section}
-                  className="hover:text-white transition-all duration-500 cursor-pointer"
-                >
-                  {item.name}
-                </Link>
-              </li>
-            );
-          })}
+    <footer className="px-4">
+      <div className="mt-12 h-[1px] w-full bg-white/10"></div>
+      <div className="mx-auto mt-6 hidden max-w-[1200px] justify-between md:flex">
+        <p className="text-2xl font-bold text-white">Md. Mursalin Hasan Nirob</p>
+        <ul className="flex gap-4 text-lg text-lightGrey">
+          {navLinks.map((item) => (
+            <li key={item.section}>
+              <Link
+                spy={true}
+                smooth={true}
+                duration={500}
+                offset={-120}
+                to={item.section}
+                className="cursor-pointer transition-all duration-300 hover:text-cyan"
+              >
+                {item.name}
+              </Link>
+            </li>
+          ))}
         </ul>
       </div>
-      <p className="max-w-[1200px] mx-auto text-right mt-2 mb-12 text-sm text-lightBrown">
-        © 2024 Nirob | All Rights Reserved.
+      <p className="mx-auto mb-12 mt-4 max-w-[1200px] text-right text-sm text-lightGrey">
+        Copyright 2026 Nirob. All Rights Reserved.
       </p>
-    </div>
+    </footer>
   );
 };
 

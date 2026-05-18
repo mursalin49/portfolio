@@ -1,10 +1,19 @@
+import { heroHighlights } from "../../data/portfolioData";
+
 const SubHeroMain = () => {
   return (
-    <div className="w-full border-y bg-brown border-lightGrey text-lightGrey flex justify-around uppercase xl:text-4xl md:text-2xl sm:text-4xl py-8 md:flex-row sm:flex-col items-center gap-4">
-      <p className="md:block sm:hidden">Fast Learner</p>
-      <p className="md:block sm:hidden">Team Work</p>
-      <p>Details Master</p>
-    </div>
+    <section className="border-y border-white/10 bg-black/45 px-4 py-6 backdrop-blur">
+      <div className="mx-auto flex max-w-[1200px] flex-wrap items-center justify-center gap-4 md:justify-between">
+        {heroHighlights.map((quality) => (
+          <p
+            key={quality}
+            className="rounded-full border border-white/10 px-5 py-2 text-sm font-bold uppercase tracking-[0.22em] text-lightGrey"
+          >
+            {quality}
+          </p>
+        ))}
+      </div>
+    </section>
   );
 };
 

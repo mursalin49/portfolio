@@ -1,7 +1,11 @@
 const ExperienceTopMiddle = () => {
   return (
-    <div className="lg:w-[35%] md:w-[50%] sm:w-[80%]">
-      <img src="images/experience-image.png" alt="my experience" />
+    <div className="w-full max-w-[360px] md:w-[50%] lg:w-[35%]">
+      <img
+        src="images/experience-image.png"
+        alt="Mobile development workflow"
+        className="mx-auto max-h-[360px] object-contain"
+      />
     </div>
   );
 };

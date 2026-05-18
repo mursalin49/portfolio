@@ -2,25 +2,34 @@ import { Link } from "react-scroll";
 
 const AboutMeText = () => {
   return (
-    <div className="flex flex-col md:items-start sm:items-center md:text-left sm:text-center">
-      <h2 className="text-6xl text-cyan mb-10">About Me</h2>
-      <p>
-       I’m Md. Mursalin Hasan Nirob, a Flutter Developer with a deep passion for crafting efficient, scalable, and aesthetically pleasing cross-platform mobile applications. My core expertise lies in Dart and Flutter, empowering me to build high-performance apps for both Android and iOS from a single codebase.
-
-Beyond mobile development, I bring additional versatility to the table with proficiency in Java, JavaScript, and Python. This full-stack capability enables me to contribute to backend API development, dynamic frontend interfaces, and powerful automation scripts.
-
-I thrive in collaborative environments, love solving real-world problems through code, and enjoy continuously exploring new technologies to stay ahead in the rapidly evolving tech landscape.
+    <div className="flex max-w-[660px] flex-col md:items-start sm:items-center md:text-left sm:text-center">
+      <p className="mb-4 text-sm font-bold uppercase tracking-[0.3em] text-orange">
+        About Me
       </p>
-      <button className="border border-orange rounded-full py-2 px-4 text-lg flex gap-2 items-center mt-10 hover:bg-orange transition-all duration-500 cursor-pointer md:self-start sm:self-center">
+      <h2 className="mb-8 text-4xl font-bold leading-tight text-white md:text-5xl">
+        I build mobile products that feel simple, fast, and dependable.
+      </h2>
+      <p className="text-lg leading-8 text-lightGrey">
+        I am Md. Mursalin Hasan Nirob, a Flutter developer focused on
+        cross-platform apps for Android and iOS. My core stack is Dart,
+        Flutter, Firebase, SQLite, and clean UI implementation.
+      </p>
+      <p className="mt-5 text-lg leading-8 text-lightGrey">
+        Alongside mobile development, I use Java, JavaScript, and Python to
+        understand APIs, automation, and the broader product workflow. I enjoy
+        turning real problems into interfaces that are easy to use and easy to
+        maintain.
+      </p>
+      <button className="mt-10 flex cursor-pointer items-center gap-2 rounded-full border border-orange/60 px-5 py-3 text-lg text-white transition-all duration-300 hover:bg-orange hover:text-black md:self-start sm:self-center">
         <Link
           spy={true}
           smooth={true}
           duration={500}
           offset={-120}
           to="projects"
-          className="cursor-pointer text-white hover:text-cyan transition-all duration-500"
+          className="cursor-pointer transition-all duration-300"
         >
-          My Projects
+          Explore Projects
         </Link>
       </button>
     </div>

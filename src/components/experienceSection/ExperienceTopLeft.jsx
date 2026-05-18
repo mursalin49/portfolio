@@ -2,8 +2,8 @@ import ExperienceInfo from "./ExperienceInfo";
 
 const ExperienceTopLeft = () => {
   return (
-    <div className="flex flex-col gap-6 w-[300px]">
-      <p className="text-orange font-bold uppercase text-3xl font-special text-center">
+    <div className="flex w-full max-w-[310px] flex-col gap-6 rounded-lg border border-white/10 bg-white/[0.04] p-6 backdrop-blur">
+      <p className="text-center font-special text-3xl font-bold uppercase text-orange">
         Since 2024
       </p>
       <div className="flex justify-center items-center gap-4">
@@ -11,11 +11,10 @@ const ExperienceTopLeft = () => {
         <p className="font-bold text-6xl text-lightBrown">-</p>
         <ExperienceInfo number="7" text="Applications" />
       </div>
-      <p className="text-center">
-        With 1 years of experience building dynamic and user-friendly 
-        applications.
+      <p className="text-center leading-7 text-lightGrey">
+        Building user-friendly mobile applications while sharpening product
+        thinking and app architecture.
       </p>
-      
     </div>
   );
 };

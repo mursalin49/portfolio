@@ -7,8 +7,8 @@ import { useSelector } from "react-redux";
 const NavbarMain = () => {
   const menuOpen = useSelector((state) => state.menu.menuOpen);
   return (
-    <nav className="max-w-[1300px] mx-auto w-full  px-4 fixed left-[50%] -translate-x-[50%] z-20 flex gap-4 mt-2">
-      <div className="flex justify-between w-full max-w-[1200px] mx-auto  bg-black items-center p-6 rounded-r-full rounded-l-full border-orange border-[0.5px] ">
+    <nav className="fixed left-1/2 top-3 z-30 mx-auto flex w-full max-w-[1300px] -translate-x-1/2 gap-3 px-4">
+      <div className="mx-auto flex w-full max-w-[1200px] items-center justify-between rounded-full border border-white/10 bg-black/75 px-5 py-4 shadow-2xl shadow-black/30 backdrop-blur-xl">
         <NavbarLogo />
         <div className={`${menuOpen ? "sm:block" : "sm:hidden"} lg:block`}>
           <NavbarLinks />
@@ -16,7 +16,7 @@ const NavbarMain = () => {
 
         <NavbarBtn />
       </div>
-      <div className="flex lg:hidden sm:block p-6 bg-black items-center justify-center rounded-full  border-orange border-[0.5px] ">
+      <div className="flex items-center justify-center rounded-full border border-white/10 bg-black/75 p-5 backdrop-blur-xl lg:hidden sm:block">
         <NavbarToggler />
       </div>
     </nav>

@@ -1,13 +1,12 @@
-const SingleSkill = ({ imgSvg, text }) => {
+const SingleSkill = ({ Icon, text }) => {
   return (
-    <div className="hover:-translate-y-10 transition-all duration-500">
-      <div className="flex flex-col items-center gap-2 relative">
-        <div className="bg-white text-cyan h-[100px] w-[100px] flex items-center justify-center rounded-full hover:text-darkGrey hover:scale-105 transform transition-all duration-500 text-6xl border-4 border-orange">
-          {imgSvg}
+    <div className="group h-full rounded-lg border border-white/10 bg-white/[0.04] p-5 text-center backdrop-blur transition-all duration-300 hover:-translate-y-2 hover:border-cyan/60 hover:bg-cyan/10">
+      <div className="flex flex-col items-center gap-4">
+        <div className="flex h-16 w-16 items-center justify-center rounded-lg border border-white/10 bg-black/40 text-4xl text-cyan transition-all duration-300 group-hover:border-orange/70 group-hover:text-orange">
+          <Icon />
         </div>
-        <p className="text-white font-bold">{text}</p>
+        <p className="font-bold text-white">{text}</p>
       </div>
-      <div className="w-[100px] h-[200px] bg-orange absolute top-[50px] -z-10"></div>
     </div>
   );
 };

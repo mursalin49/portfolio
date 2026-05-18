@@ -1,11 +1,10 @@
 const ContactText = () => {
   return (
     <div>
-      <h2 className="text-orange text-3xl mb-4">Get In Touch</h2>
-      <p>
-        Feel free to reach out if you’d like to collaborate
-        <br />
-        you are just a few clicks away!
+      <h3 className="mb-4 text-3xl font-bold text-orange">Get In Touch</h3>
+      <p className="max-w-[560px] text-lg leading-8 text-lightGrey">
+        Have a mobile app idea, internship opportunity, or collaboration in
+        mind? Send a message and I will get back to you.
       </p>
     </div>
   );

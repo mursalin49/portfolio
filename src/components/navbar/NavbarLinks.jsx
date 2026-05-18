@@ -1,18 +1,10 @@
 import { Link } from "react-scroll";
-
-const links = [
-  { link: "About Me", section: "about" },
-  { link: "Skills", section: "skills" },
-  { link: "Education", section: "education" },
-  { link: "Experience", section: "experience" },
-  { link: "Projects", section: "projects" },
-  { link: "Contact", section: "contact" },
-];
+import { navLinks } from "../../data/portfolioData";
 
 const NavbarLinks = () => {
   return (
-    <ul className="flex lg:flex-row sm:flex-col gap-6 text-white font-body lg:relative sm:absolute sm:top-[120%] text-center left-[50%] -translate-x-[50%] lg:text-md sm:text-xl sm:bg-cyan/30 backdrop-blur-lg lg:bg-black sm:w-full py-4">
-      {links.map((link, index) => {
+    <ul className="left-1/2 flex gap-5 py-4 text-center font-body text-white sm:absolute sm:top-[120%] sm:w-[calc(100%-2rem)] sm:-translate-x-1/2 sm:flex-col sm:rounded-2xl sm:border sm:border-white/10 sm:bg-black/90 sm:text-lg sm:backdrop-blur-xl lg:relative lg:top-auto lg:w-auto lg:translate-x-0 lg:flex-row lg:border-0 lg:bg-transparent lg:text-sm lg:backdrop-blur-0">
+      {navLinks.map((link, index) => {
         return (
           <li key={index} className="group">
             <Link
@@ -21,11 +13,11 @@ const NavbarLinks = () => {
               duration={500}
               offset={-130}
               to={link.section}
-              className="cursor-pointer text-white hover:text-cyan transition-all duration-500"
+              className="cursor-pointer text-lightGrey transition-all duration-300 hover:text-white"
             >
-              {link.link}
+              {link.name}
             </Link>
-            <div className="mx-auto bg-cyan w-0 group-hover:w-full h-[1px] transition-all duration-500"></div>
+            <div className="mx-auto h-[1px] w-0 bg-cyan transition-all duration-300 group-hover:w-full"></div>
           </li>
         );
       })}

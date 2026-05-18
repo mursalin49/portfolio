@@ -1,14 +1,12 @@
-import { HiOutlineMail } from "react-icons/hi";
-import { FiPhone } from "react-icons/fi";
-import { IoLocationOutline } from "react-icons/io5";
 import SingleInfo from "./SingleInfo";
+import { contactInfo } from "../../data/portfolioData";
 
 const ContactInfo = () => {
   return (
     <div className="flex flex-col gap-4">
-      <SingleInfo text="mursalinnirob@gmail.com" Image={HiOutlineMail} />
-      <SingleInfo text="+88 01857043588" Image={FiPhone} />
-      <SingleInfo text="Dhaka, Bangladesh" Image={IoLocationOutline} />
+      {contactInfo.map((item) => (
+        <SingleInfo key={item.text} text={item.text} Icon={item.Icon} />
+      ))}
     </div>
   );
 };

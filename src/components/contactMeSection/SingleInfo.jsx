@@ -1,8 +1,8 @@
-const SingleInfo = ({ text, Image }) => {
+const SingleInfo = ({ text, Icon }) => {
   return (
-    <div className="flex gap-4 items-center justify-start">
-      <Image className="text-3xl" />
-      <p>{text}</p>
+    <div className="flex items-center justify-start gap-4 text-lightGrey">
+      <Icon className="text-3xl text-cyan" />
+      <p className="break-all">{text}</p>
     </div>
   );
 };

@@ -3,16 +3,23 @@ import ContactMeRight from "./ContactMeRight";
 
 const ContactMeMain = () => {
   return (
-    <div
+    <section
       id="contact"
-      className="max-w-[1200px] mx-auto items-center justify-center mt-[100px] px-4 "
+      className="mx-auto max-w-[1200px] items-center justify-center px-4 py-24"
     >
-      <h2 className="text-6xl text-cyan mb-10 text-center">Contact Me</h2>
-      <div className="flex justify-between gap-24 bg-brown p-8 rounded-2xl lg:flex-row sm:flex-col">
+      <div className="mx-auto mb-12 max-w-[720px] text-center">
+        <p className="mb-4 text-sm font-bold uppercase tracking-[0.3em] text-orange">
+          Contact
+        </p>
+        <h2 className="text-4xl font-bold text-white md:text-5xl">
+          Let us build something useful.
+        </h2>
+      </div>
+      <div className="flex justify-between gap-12 rounded-lg border border-white/10 bg-white/[0.04] p-6 backdrop-blur lg:flex-row sm:flex-col md:p-8">
         <ContactMeLeft />
         <ContactMeRight />
       </div>
-    </div>
+    </section>
   );
 };
 
