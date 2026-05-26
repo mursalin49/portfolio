@@ -2,8 +2,11 @@ import { motion } from "framer-motion";
 import { Link } from "react-scroll";
 import { BsArrowUpRight } from "react-icons/bs";
 import { FaGithub } from "react-icons/fa";
+import { FiEye } from "react-icons/fi";
 import { fadeIn } from "../../framerMotion/variants";
 import { heroStats } from "../../data/portfolioData";
+
+const cvLink = "/cv/mursalin_nirob.pdf";
 
 const HeroText = () => {
   return (
@@ -55,6 +58,15 @@ const HeroText = () => {
           View Projects
           <BsArrowUpRight className="transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1" />
         </Link>
+        <a
+          href={cvLink}
+          target="_blank"
+          rel="noreferrer"
+          className="inline-flex items-center gap-2 rounded-full border border-orange/40 bg-orange/10 px-6 py-3 text-base font-bold text-white backdrop-blur transition-all duration-300 hover:border-orange hover:text-orange"
+        >
+          <FiEye />
+          View CV
+        </a>
         <a
           href="https://github.com/mursalin49"
           target="_blank"
