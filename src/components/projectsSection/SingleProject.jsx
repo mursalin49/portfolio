@@ -1,14 +1,21 @@
 import { BsArrowUpRightCircleFill, BsGooglePlay } from "react-icons/bs";
 import { FaGithub } from "react-icons/fa";
 
-const ProjectVisual = ({ image, name, type, accent = "cyan", visualLabel }) => {
+const ProjectVisual = ({
+  image,
+  name,
+  type,
+  accent = "cyan",
+  visualLabel,
+  gallery = [],
+}) => {
   const accentClass = accent === "orange" ? "project-visual--orange" : "project-visual--cyan";
 
   return (
     <div className={`project-visual ${accentClass}`}>
       <div className="project-visual__halo"></div>
       <div className="project-visual__phone">
-        {image ? (
+        {image && gallery.length === 0 ? (
           <img src={image} alt={`${name} preview`} className="project-visual__image" />
         ) : (
           <div className="project-visual__fallback">
@@ -19,10 +26,17 @@ const ProjectVisual = ({ image, name, type, accent = "cyan", visualLabel }) => {
             </div>
             <div className="project-visual__app-title">{visualLabel}</div>
             <div className="project-visual__tiles">
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
+              {Array.from({ length: 4 }).map((_, index) => {
+                const tileImage = gallery[index];
+
+                return (
+                  <span key={tileImage || `tile-${index}`}>
+                    {tileImage ? (
+                      <img src={tileImage} alt={`${name} screen ${index + 1}`} />
+                    ) : null}
+                  </span>
+                );
+              })}
             </div>
             <div className="project-visual__bars">
               <span></span>
@@ -48,6 +62,7 @@ const SingleProject = ({
   description,
   accent,
   visualLabel,
+  gallery,
 }) => {
   return (
     <article
@@ -61,6 +76,7 @@ const SingleProject = ({
         type={type}
         accent={accent}
         visualLabel={visualLabel}
+        gallery={gallery}
       />
 
       <div className="flex flex-col">

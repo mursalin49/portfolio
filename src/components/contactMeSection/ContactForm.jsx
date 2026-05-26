@@ -1,11 +1,27 @@
 import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 
+const emailServiceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+const emailTemplateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+const emailPublicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+const getEmailErrorMessage = (error) => {
+  const details = error?.text || error?.message || "";
+  const configHint = `Service: ${emailServiceId || "missing"}, Template: ${
+    emailTemplateId || "missing"
+  }`;
+
+  return details
+    ? `Message could not be sent: ${details} (${configHint})`
+    : `Message could not be sent. Please try again. (${configHint})`;
+};
+
 const ContactForm = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
-  const [success, setSuccess] = useState("");
+  const [status, setStatus] = useState({ message: "", type: "success" });
+  const [isSending, setIsSending] = useState(false);
   const handleName = (e) => {
     setName(e.target.value);
   };
@@ -16,29 +32,49 @@ const ContactForm = () => {
     setMessage(e.target.value);
   };
   const form = useRef();
-  const sendEmail = (e) => {
+  const sendEmail = async (e) => {
     e.preventDefault();
-    emailjs
-      .sendForm("service_ko3hmpt", "template_ahbmmqd", form.current, {
-        publicKey: "I6HAT5mUZH7WHabGE",
-      })
-      .then(
-        () => {
-          setEmail("");
-          setName("");
-          setMessage("");
-          setSuccess("Message sent successfully.");
-        },
-        (error) => {
-          console.log("FAILED...", error.text);
-        }
-      );
+
+    if (!emailServiceId || !emailTemplateId || !emailPublicKey) {
+      setStatus({
+        message: "Email service is not configured yet.",
+        type: "error",
+      });
+      return;
+    }
+
+    setIsSending(true);
+    setStatus({ message: "", type: "success" });
+
+    try {
+      await emailjs.sendForm(emailServiceId, emailTemplateId, form.current, {
+        publicKey: emailPublicKey,
+      });
+      setEmail("");
+      setName("");
+      setMessage("");
+      setStatus({ message: "Message sent successfully.", type: "success" });
+    } catch (error) {
+      console.log("FAILED...", error?.text || error);
+      setStatus({
+        message: getEmailErrorMessage(error),
+        type: "error",
+      });
+    } finally {
+      setIsSending(false);
+    }
   };
 
   return (
     <div>
-      <p className="text-cyan">{success}</p>
+      {status.message ? (
+        <p className={status.type === "error" ? "text-orange" : "text-cyan"}>
+          {status.message}
+        </p>
+      ) : null}
       <form ref={form} onSubmit={sendEmail} className="flex flex-col gap-4">
+        <input type="hidden" name="title" value="Portfolio Contact Message" />
+        <input type="hidden" name="to_name" value="Mursalin Nirob" />
         <input
           type="text"
           name="from_name"
@@ -70,9 +106,10 @@ const ContactForm = () => {
         />
         <button
           type="submit"
-          className="h-12 w-full rounded-lg border border-cyan bg-cyan text-xl font-bold text-black transition-all duration-300 hover:border-orange hover:bg-orange"
+          disabled={isSending}
+          className="h-12 w-full rounded-lg border border-cyan bg-cyan text-xl font-bold text-black transition-all duration-300 hover:border-orange hover:bg-orange disabled:cursor-not-allowed disabled:opacity-70"
         >
-          Send
+          {isSending ? "Sending..." : "Send"}
         </button>
       </form>
     </div>

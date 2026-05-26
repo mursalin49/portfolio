@@ -148,14 +148,23 @@ const HeroThreeScene = () => {
     const particleGeometry = new THREE.BufferGeometry();
     const particleCount = 130;
     const positions = new Float32Array(particleCount * 3);
+    const particleBaseX = new Float32Array(particleCount);
+    const particleBaseZ = new Float32Array(particleCount);
+    const particleDrift = new Float32Array(particleCount);
+    const particleSpeeds = new Float32Array(particleCount);
     for (let index = 0; index < particleCount; index += 1) {
       const angle = index * 2.399;
       const radius = 1.9 + (index % 9) * 0.28;
       positions[index * 3] = Math.cos(angle) * radius;
       positions[index * 3 + 1] = Math.sin(angle * 0.7) * 2.25;
       positions[index * 3 + 2] = -1.8 + (index % 17) * 0.18;
+      particleBaseX[index] = positions[index * 3];
+      particleBaseZ[index] = positions[index * 3 + 2];
+      particleDrift[index] = 0.04 + (index % 6) * 0.012;
+      particleSpeeds[index] = 0.0026 + (index % 7) * 0.00058;
     }
     particleGeometry.setAttribute("position", new THREE.BufferAttribute(positions, 3));
+    const particlePosition = particleGeometry.getAttribute("position");
     const particles = new THREE.Points(
       particleGeometry,
       new THREE.PointsMaterial({
@@ -169,15 +178,32 @@ const HeroThreeScene = () => {
     root.add(particles);
 
     const pointer = { x: 0, y: 0 };
+    const scroll = { progress: 0 };
+    const layout = {
+      rootX: 0,
+      rootY: 0,
+      cameraZ: 7.3,
+      gridX: 0,
+    };
+
     const handlePointerMove = (event) => {
       pointer.x = (event.clientX / window.innerWidth - 0.5) * 2;
       pointer.y = (event.clientY / window.innerHeight - 0.5) * 2;
     };
     window.addEventListener("pointermove", handlePointerMove);
 
+    const handleScroll = () => {
+      const hero = mount.parentElement;
+      const rect = hero ? hero.getBoundingClientRect() : mount.getBoundingClientRect();
+      const height = Math.max(rect.height || window.innerHeight, 1);
+      scroll.progress = Math.min(1, Math.max(0, -rect.top / height));
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const clock = new THREE.Clock();
     let animationFrame;
+    let previousElapsed = 0;
 
     const resize = () => {
       const { clientWidth, clientHeight } = mount;
@@ -188,20 +214,53 @@ const HeroThreeScene = () => {
       camera.updateProjectionMatrix();
 
       const narrow = width < 760;
-      root.position.set(narrow ? 0 : 1.72, narrow ? -0.72 : -0.08, 0);
+      layout.rootX = narrow ? 0 : 1.72;
+      layout.rootY = narrow ? -0.72 : -0.08;
+      layout.cameraZ = narrow ? 8.4 : 7.3;
+      layout.gridX = narrow ? 0 : 1.05;
+      root.position.set(layout.rootX, layout.rootY, 0);
       root.scale.setScalar(narrow ? 0.78 : 1);
-      camera.position.z = narrow ? 8.4 : 7.3;
-      grid.position.x = narrow ? 0 : 1.05;
+      camera.position.z = layout.cameraZ;
+      grid.position.x = layout.gridX;
+      handleScroll();
     };
 
     const animate = () => {
       const elapsed = clock.getElapsedTime();
+      const delta = Math.min(elapsed - previousElapsed, 0.05);
+      previousElapsed = elapsed;
       if (!reduceMotion) {
+        const scrollDepth = scroll.progress;
+        root.position.y += ((layout.rootY - scrollDepth * 0.72) - root.position.y) * 0.04;
+        root.position.z += ((scrollDepth * 0.42) - root.position.z) * 0.04;
+        camera.position.z += ((layout.cameraZ - scrollDepth * 0.42) - camera.position.z) * 0.035;
+        grid.position.y += ((scrollDepth * 0.55) - grid.position.y) * 0.025;
+        grid.position.x += ((layout.gridX - pointer.x * 0.18) - grid.position.x) * 0.025;
         root.rotation.y += ((pointer.x * 0.18 + Math.sin(elapsed * 0.18) * 0.1) - root.rotation.y) * 0.035;
         root.rotation.x += ((-pointer.y * 0.08 + Math.sin(elapsed * 0.24) * 0.04) - root.rotation.x) * 0.035;
         ringOne.rotation.z += 0.0035;
         ringTwo.rotation.z -= 0.0042;
         particles.rotation.y += 0.0017;
+        for (let index = 0; index < particleCount; index += 1) {
+          const xIndex = index * 3;
+          const yIndex = xIndex + 1;
+          const zIndex = xIndex + 2;
+          const pull = 0.14 + (index % 5) * 0.018;
+          positions[xIndex] =
+            particleBaseX[index] +
+            Math.sin(elapsed * 0.65 + index) * particleDrift[index] +
+            pointer.x * pull;
+          positions[yIndex] -= particleSpeeds[index] * delta * 60 * (1 + scrollDepth * 0.65);
+          positions[zIndex] =
+            particleBaseZ[index] +
+            Math.cos(elapsed * 0.52 + index * 0.4) * 0.035 -
+            scrollDepth * 0.24;
+
+          if (positions[yIndex] < -2.75) {
+            positions[yIndex] = 2.75 + (index % 10) * 0.08;
+          }
+        }
+        particlePosition.needsUpdate = true;
         panels.children.forEach((panel, index) => {
           panel.position.z = -0.12 + Math.sin(elapsed * 1.2 + index) * 0.025;
         });
@@ -218,6 +277,7 @@ const HeroThreeScene = () => {
       window.cancelAnimationFrame(animationFrame);
       window.removeEventListener("resize", resize);
       window.removeEventListener("pointermove", handlePointerMove);
+      window.removeEventListener("scroll", handleScroll);
       mount.removeChild(renderer.domElement);
       scene.traverse((object) => {
         if (object.geometry) object.geometry.dispose();

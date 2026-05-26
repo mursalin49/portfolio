@@ -6,20 +6,20 @@ import HeroMain from "./components/heroSection/HeroMain";
 import NavbarMain from "./components/navbar/NavbarMain";
 import ProjectsMain from "./components/projectsSection/ProjectsMain";
 import SkillsMain from "./components/skillsSection/SkillsMain";
-import SubSkills from "./components/skillsSection/SubSkills";
 import SubHeroMain from "./components/subHeroSection/SubHeroMain";
 import Education from "./components/education/Education";
+import SiteParticles from "./components/common/SiteParticles";
 import "./App.css";
 
 function App() {
   return (
     <main className="portfolio-shell font-body text-white relative overflow-hidden">
+      <SiteParticles />
       <NavbarMain />
       <HeroMain />
       <SubHeroMain />
       <AboutMeMain />
       <SkillsMain />
-      <SubSkills />
       <Education />
       <ExperienceMain />
       <ProjectsMain />

@@ -30,8 +30,8 @@ export const navLinks = [
 ];
 
 export const heroStats = [
-  { value: "7+", label: "Flutter apps" },
-  { value: "2024", label: "building since" },
+  { value: "10+", label: "Projects" },
+  { value: "2025", label: "building since" },
   { value: "CSE", label: "student" },
 ];
 
@@ -106,8 +106,8 @@ export const educationData = [
 export const experiences = [
   {
     job: "Flutter App Developer",
-    company: "Independent Projects",
-    date: "2024 - Present",
+    company: "SparkTech Agency",
+    date: "2025 - Present",
     responsibilities: [
       "Built Flutter apps with Firebase, SQLite, API integration, and responsive UI.",
       "Practiced clean folder structure, reusable widgets, and state-aware screens.",
@@ -117,7 +117,7 @@ export const experiences = [
   {
     job: "CSE Student",
     company: "BUBT",
-    date: "2022 - Present",
+    date: "2022 - April ,2026",
     responsibilities: [
       "Studying software engineering fundamentals, data structures, and databases.",
       "Applying academic concepts through mobile apps and problem-solving work.",
@@ -146,6 +146,12 @@ export const projects = [
     type: "REST API, JWT, Role-Based Auth, Local Storage",
     accent: "cyan",
     visualLabel: "Family Hub",
+    gallery: [
+      "images/family1.jpeg",
+      "images/family2.jpeg",
+      "images/family3.jpeg",
+      "images/family4.jpeg",
+    ],
     description: [
       "Built a mobile application to centralize household planning and family organization.",
       "Implemented shared calendar for event tracking and advanced task management for chores.",
@@ -154,14 +160,19 @@ export const projects = [
   },
   {
     name: "Wuffoos - Pet Care & Sitter",
-    year: "2025",
+    year: "2026",
     align: "left",
-    apkLink:
-      "https://drive.google.com/file/d/1pQClRYmUGGAN8O6JuVoHn5aJTSpGM8VP/view?usp=sharing",
+    apkLink: "https://play.google.com/store/apps/details?id=com.wuffoos.app",
     githubLink: "https://github.com/mursalin49/petcare",
     type: "Flutter, Dart, Role-Based Auth, REST API, GetX",
     accent: "orange",
     visualLabel: "Pet Care",
+    gallery: [
+      "images/Wuffoos1.jpeg",
+      "images/Wuffoos2.jpeg",
+      "images/Wuffoos3.jpeg",
+      "images/Wuffoos4.jpeg",
+    ],
     description: [
       "Developed a dual-interface app with profile switching for Pet Owners and Pet Sitters.",
       "Built an earnings dashboard for sitters to track income, monthly revenue, and pending payments.",
@@ -171,7 +182,7 @@ export const projects = [
   },
   {
     name: "Ayudame - Multi-Service Platform",
-    year: "2025",
+    year: "2026",
     align: "right",
     image: "images/social.jpg",
     apkLink:
@@ -180,6 +191,12 @@ export const projects = [
     type: "Flutter, Dart, REST API, Firebase, Provider",
     accent: "cyan",
     visualLabel: "Services",
+    gallery: [
+      "images/Ayudame1.jpeg",
+      "images/Ayudame2.jpeg",
+      "images/Ayudame3.jpeg",
+      "images/Ayudame4.jpeg",
+    ],
     description: [
       "Developed a multi-service platform connecting users with service providers, business owners, and event managers.",
       "Built real-time service booking and management features with seamless API integration.",
@@ -208,7 +225,7 @@ export const projects = [
 
 export const contactInfo = [
   { text: "mursalinnirob@gmail.com", Icon: BsEnvelope },
-  { text: "+88 01857043588", Icon: FiPhone },
+  { text: "+88 01752331906", Icon: FiPhone },
   { text: "Dhaka, Bangladesh", Icon: IoLocationOutline },
 ];
 

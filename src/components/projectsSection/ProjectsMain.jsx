@@ -24,6 +24,7 @@ const ProjectsMain = () => {
               description={project.description}
               accent={project.accent}
               visualLabel={project.visualLabel}
+              gallery={project.gallery}
             />
           );
         })}

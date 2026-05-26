@@ -47,8 +47,8 @@ const AboutMeImage = () => {
       <div className="mt-6 grid grid-cols-2 gap-3">
         <div className="about-mini-stat">
           <FiLayers className="text-2xl text-orange" />
-          <p className="mt-3 text-2xl font-bold text-white">7+</p>
-          <span>Apps built</span>
+          <p className="mt-3 text-2xl font-bold text-white">10+</p>
+          <span>Projects</span>
         </div>
         <div className="about-mini-stat">
           <FiSmartphone className="text-2xl text-cyan" />
