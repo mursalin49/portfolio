@@ -147,10 +147,10 @@ export const projects = [
     accent: "cyan",
     visualLabel: "Family Hub",
     gallery: [
-      "images/family1.jpeg",
-      "images/family2.jpeg",
-      "images/family3.jpeg",
-      "images/family4.jpeg",
+      "/images/family1.jpeg",
+      "/images/family2.jpeg",
+      "/images/family3.jpeg",
+      "/images/family4.jpeg",
     ],
     description: [
       "Built a mobile application to centralize household planning and family organization.",
@@ -168,10 +168,10 @@ export const projects = [
     accent: "orange",
     visualLabel: "Pet Care",
     gallery: [
-      "images/Wuffoos1.jpeg",
-      "images/Wuffoos2.jpeg",
-      "images/Wuffoos3.jpeg",
-      "images/Wuffoos4.jpeg",
+      "/images/Wuffoos1.jpeg",
+      "/images/Wuffoos2.jpeg",
+      "/images/Wuffoos3.jpeg",
+      "/images/Wuffoos4.jpeg",
     ],
     description: [
       "Developed a dual-interface app with profile switching for Pet Owners and Pet Sitters.",
@@ -184,7 +184,7 @@ export const projects = [
     name: "Ayudame - Multi-Service Platform",
     year: "2026",
     align: "right",
-    image: "images/social.jpg",
+    image: "/images/social.jpg",
     apkLink:
       "https://drive.google.com/file/d/1qwxqgeJzQayyxrKUplVudTnVObIoaSTU/view?usp=sharing",
     githubLink: "https://github.com/sparktechagency/lavellh",
@@ -192,10 +192,10 @@ export const projects = [
     accent: "cyan",
     visualLabel: "Services",
     gallery: [
-      "images/Ayudame1.jpeg",
-      "images/Ayudame2.jpeg",
-      "images/Ayudame3.jpeg",
-      "images/Ayudame4.jpeg",
+      "/images/Ayudame1.jpeg",
+      "/images/Ayudame2.jpeg",
+      "/images/Ayudame3.jpeg",
+      "/images/Ayudame4.jpeg",
     ],
     description: [
       "Developed a multi-service platform connecting users with service providers, business owners, and event managers.",
@@ -207,7 +207,7 @@ export const projects = [
     name: "Plant Monitoring System (IoT)",
     year: "2025",
     align: "left",
-    image: "images/plant.png",
+    image: "/images/plant.png",
     apkLink:
       "https://drive.google.com/file/d/12qw1TLdp6VyiyCntn9Gl5d7lgQeAeaqI/view?usp=sharing",
     githubLink: "https://github.com/mursalin49/Plant-Monitoring-App",
