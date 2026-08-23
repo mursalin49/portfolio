@@ -107,7 +107,7 @@ export const experiences = [
   {
     job: "Flutter App Developer",
     company: "SparkTech Agency",
-    date: "2025 - Present",
+    date: "2025 - ",
     responsibilities: [
       "Built Flutter apps with Firebase, SQLite, API integration, and responsive UI.",
       "Practiced clean folder structure, reusable widgets, and state-aware screens.",
@@ -117,7 +117,7 @@ export const experiences = [
   {
     job: "CSE Student",
     company: "BUBT",
-    date: "2022 - April ,2026",
+    date: "2022 - May,2026",
     responsibilities: [
       "Studying software engineering fundamentals, data structures, and databases.",
       "Applying academic concepts through mobile apps and problem-solving work.",
@@ -186,7 +186,7 @@ export const projects = [
     align: "right",
     image: "/images/social.jpg",
     apkLink:
-      "https://drive.google.com/file/d/1qwxqgeJzQayyxrKUplVudTnVObIoaSTU/view?usp=sharing",
+      "https://play.google.com/store/apps/details?id=com.lavell.ayudame",
     githubLink: "https://github.com/sparktechagency/lavellh",
     type: "Flutter, Dart, REST API, Firebase, Provider",
     accent: "cyan",
@@ -232,7 +232,7 @@ export const contactInfo = [
 export const socialLinks = [
   {
     label: "LinkedIn",
-    link: "https://www.linkedin.com/in/nirob-hasan-3b4776246/",
+    link: "https://www.linkedin.com/in/mursalin-nirob-388942390/",
     Icon: BsLinkedin,
   },
   { label: "GitHub", link: "https://github.com/mursalin49", Icon: BsGithub },
