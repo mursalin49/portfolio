@@ -22,6 +22,27 @@ a {
   -webkit-tap-highlight-color: transparent;
 }
 
+/* Smooth Transitions */
+.smooth-transition {
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.smooth-hover-scale {
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+              box-shadow 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.smooth-hover-scale:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 30px rgba(53, 208, 186, 0.2);
+}
+
+.smooth-border-transition {
+  transition: border-color 0.3s ease, 
+              background-color 0.3s ease,
+              color 0.3s ease;
+}
+
 .navbar-profile-frame {
   animation: profile-soft-pulse 3.8s ease-in-out infinite;
   background:
@@ -48,10 +69,7 @@ a {
 .portfolio-shell {
   isolation: isolate;
   min-height: 100vh;
-  background:
-    linear-gradient(120deg, rgba(53, 208, 186, 0.08), transparent 34%),
-    linear-gradient(260deg, rgba(255, 184, 77, 0.1), transparent 32%),
-    linear-gradient(180deg, #070a0d 0%, #0b1117 42%, #090b0f 100%);
+  background: #070a0d;
 }
 
 .portfolio-shell::before {

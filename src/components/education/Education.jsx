@@ -17,9 +17,18 @@ const Education = () => {
               key={edu.degree}
               className="rounded-lg border border-white/10 bg-white/[0.04] p-6 backdrop-blur transition-all duration-300 hover:-translate-y-2 hover:border-cyan/60"
             >
-              <p className="mb-4 inline-flex rounded-full border border-cyan/30 px-3 py-1 text-sm font-bold text-cyan">
-                {edu.year}
-              </p>
+              <div className="mb-4 flex items-center justify-between gap-3">
+                <div className="flex h-14 w-14 items-center justify-center overflow-hidden rounded-xl border border-white/10 bg-white/5 p-2">
+                  <img
+                    src={edu.logo}
+                    alt={edu.institute}
+                    className="h-full w-full object-contain"
+                  />
+                </div>
+                <p className="inline-flex rounded-full border border-cyan/30 px-3 py-1 text-sm font-bold text-cyan">
+                  {edu.year}
+                </p>
+              </div>
               <h3 className="text-xl font-bold leading-7 text-white">
                 {edu.degree}
               </h3>

@@ -1,20 +1,21 @@
+import { motion } from "framer-motion";
+import { fadeIn } from "../../framerMotion/variants";
 import AboutMeImage from "./AboutMeImage";
 import AboutMeText from "./AboutMeText";
-import Reveal from "../common/Reveal";
-
 
 const AboutMeMain = () => {
   return (
-    <section
-      id="about"
-      className="mx-auto flex max-w-[1200px] items-center justify-between gap-12 px-4 py-28 md:flex-row sm:flex-col"
-    >
-      <Reveal direction="right">
-        <AboutMeText />
-      </Reveal>
-      <Reveal direction="left">
+    <section id="about" className="relative mx-auto max-w-[1000px] px-4 py-16 md:py-24">
+      <motion.div
+        variants={fadeIn("up", 0.2)}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.1 }}
+        className="flex flex-col items-center text-center"
+      >
         <AboutMeImage />
-      </Reveal>
+        <AboutMeText />
+      </motion.div>
     </section>
   );
 };

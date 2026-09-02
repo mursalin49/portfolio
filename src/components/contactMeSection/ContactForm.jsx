@@ -80,7 +80,7 @@ const ContactForm = () => {
           name="from_name"
           placeholder="Your Name"
           required
-          className="h-12 rounded-lg border border-white/10 bg-black/35 px-4 text-white outline-none transition-colors duration-300 placeholder:text-lightGrey focus:border-cyan"
+          className="h-12 sm:h-13 rounded-lg border border-white/10 bg-black/35 px-4 text-sm sm:text-base text-white outline-none transition-colors duration-300 placeholder:text-lightGrey focus:border-cyan focus:ring-2 focus:ring-cyan/20"
           value={name}
           onChange={handleName}
         />
@@ -89,7 +89,7 @@ const ContactForm = () => {
           name="from_email"
           placeholder="Your Email"
           required
-          className="h-12 rounded-lg border border-white/10 bg-black/35 px-4 text-white outline-none transition-colors duration-300 placeholder:text-lightGrey focus:border-cyan"
+          className="h-12 sm:h-13 rounded-lg border border-white/10 bg-black/35 px-4 text-sm sm:text-base text-white outline-none transition-colors duration-300 placeholder:text-lightGrey focus:border-cyan focus:ring-2 focus:ring-cyan/20"
           value={email}
           onChange={handleEmail}
         />
@@ -100,16 +100,16 @@ const ContactForm = () => {
           cols="50"
           placeholder="Message"
           required
-          className="rounded-lg border border-white/10 bg-black/35 p-4 text-white outline-none transition-colors duration-300 placeholder:text-lightGrey focus:border-cyan"
+          className="rounded-lg border border-white/10 bg-black/35 p-4 text-sm sm:text-base text-white outline-none transition-colors duration-300 placeholder:text-lightGrey focus:border-cyan focus:ring-2 focus:ring-cyan/20"
           value={message}
           onChange={handleMessage}
         />
         <button
           type="submit"
           disabled={isSending}
-          className="h-12 w-full rounded-lg border border-cyan bg-cyan text-xl font-bold text-black transition-all duration-300 hover:border-orange hover:bg-orange disabled:cursor-not-allowed disabled:opacity-70"
+          className="h-12 w-full rounded-lg border border-cyan bg-cyan text-base sm:text-lg font-bold text-black transition-all duration-300 hover:scale-105 hover:border-orange hover:bg-orange hover:shadow-lg hover:shadow-cyan/50 disabled:cursor-not-allowed disabled:opacity-70 disabled:hover:scale-100"
         >
-          {isSending ? "Sending..." : "Send"}
+          {isSending ? "Sending..." : "Send Message"}
         </button>
       </form>
     </div>

@@ -17,15 +17,14 @@ function App() {
       <SiteParticles />
       <NavbarMain />
       <HeroMain />
-      <SubHeroMain />
       <AboutMeMain />
+      <SubHeroMain />
       <SkillsMain />
       <Education />
       <ExperienceMain />
       <ProjectsMain />
       <ContactMeMain />
       <FooterMain />
-      
     </main>
   );
 }

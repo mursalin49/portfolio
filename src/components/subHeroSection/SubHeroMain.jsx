@@ -2,7 +2,7 @@ import { heroHighlights } from "../../data/portfolioData";
 
 const SubHeroMain = () => {
   return (
-    <section className="border-y border-white/10 bg-black/45 px-4 py-6 backdrop-blur">
+    <section className="border-y border-white/10 px-4 py-6 backdrop-blur">
       <div className="mx-auto flex max-w-[1200px] flex-wrap items-center justify-center gap-4 md:justify-between">
         {heroHighlights.map((quality) => (
           <p

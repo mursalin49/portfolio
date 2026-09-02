@@ -30,9 +30,9 @@ export const navLinks = [
 ];
 
 export const heroStats = [
-  { value: "10+", label: "Projects" },
-  { value: "2025", label: "building since" },
-  { value: "CSE", label: "student" },
+  { value: "12+", label: "Projects" },
+  { value: "1+", label: "Years experience" },
+  { value: "CSE", label: "Student" },
 ];
 
 export const heroHighlights = ["Flutter Apps", "Firebase Ready", "Clean Architecture"];
@@ -42,7 +42,7 @@ export const sectionHeaders = {
     eyebrow: "Toolkit",
     title: "Skills",
     description:
-      "I use these technologies with a focus on clean code, reusable structure, and interfaces that stay smooth on real devices.",
+      "Tools I use for mobile development, backend integration, and production deployments.",
   },
   education: {
     eyebrow: "Education",
@@ -80,12 +80,40 @@ export const skills = [
   { skill: "React", Icon: FaReact },
 ];
 
+export const skillsCategories = [
+  {
+    category: "Mobile Development",
+    skills: ["Flutter", "Dart", "GetX", "BLoC", "Responsive UI", "Android", "iOS"],
+  },
+  {
+    category: "Backend & APIs",
+    skills: ["REST APIs", "Firebase", "Firestore", "Authentication", "Real-time DB", "Node.js", "Python"],
+  },
+  {
+    category: "State Management",
+    skills: ["GetX", "Provider", "BLoC", "Clean Architecture", "MVVM"],
+  },
+  {
+    category: "Databases & Storage",
+    skills: ["Firebase", "SQLite", "Hive", "SharedPreferences", "GetStorage", "Firestore"],
+  },
+  {
+    category: "Tools & Practices",
+    skills: ["Git", "GitHub", "Android Studio", "VS Code", "Figma", "Postman", "CI/CD", "Agile"],
+  },
+  {
+    category: "Other Technologies",
+    skills: ["Java", "Python", "JavaScript", "React", "IoT", "Google Maps API", "WebRTC"],
+  },
+];
+
 export const educationData = [
   {
     degree: "B.Sc in Computer Science & Engineering",
     institute: "Bangladesh University of Business and Technology (BUBT)",
     year: "2022 - Present",
     location: "Mirpur, Dhaka, Bangladesh",
+    logo: "/images/bubt.webp",
   },
   {
     degree: "HSC (Science)",
@@ -93,6 +121,7 @@ export const educationData = [
     year: "2018 - 2020",
     gpa: "GPA: 4.83 / 5.00",
     location: "Netrakona, Bangladesh",
+    logo: "/images/netrakona%20govt.png",
   },
   {
     degree: "SSC (Science)",
@@ -100,6 +129,7 @@ export const educationData = [
     year: "2016 - 2018",
     gpa: "GPA: 4.78 / 5.00",
     location: "Netrakona, Bangladesh",
+    logo: "/images/dutt%20high.jpg",
   },
 ];
 
@@ -107,33 +137,16 @@ export const experiences = [
   {
     job: "Flutter App Developer",
     company: "SparkTech Agency",
-    date: "2025 - ",
+    date: "Oct 2025 - May 2026",
+    logo: "/images/Sparktech%20Agency.jpeg",
     responsibilities: [
-      "Built Flutter apps with Firebase, SQLite, API integration, and responsive UI.",
-      "Practiced clean folder structure, reusable widgets, and state-aware screens.",
-      "Prepared portfolio-ready case studies with GitHub repositories.",
+      "Developed and maintained production-level cross-platform mobile applications for Android and iOS using Flutter and Dart.",
+      "Integrated RESTful APIs and third-party services, worked with Firebase (Authentication, Firestore, FCM) for seamless real-time functionality.",
+      "Architected scalable, maintainable codebases using GetX and BLoC state management while following Clean Architecture principles.",
+      "Collaborated with UI/UX designers and backend engineers in an Agile, cross-functional environment.",
     ],
   },
-  {
-    job: "CSE Student",
-    company: "BUBT",
-    date: "2022 - May,2026",
-    responsibilities: [
-      "Studying software engineering fundamentals, data structures, and databases.",
-      "Applying academic concepts through mobile apps and problem-solving work.",
-      "Collaborating with peers on learning projects and technical exploration.",
-    ],
-  },
-  {
-    job: "Frontend Learner",
-    company: "React, JavaScript, UI Systems",
-    date: "Ongoing",
-    responsibilities: [
-      "Building better UI judgment across layout, accessibility, and component design.",
-      "Using JavaScript and React knowledge to understand modern product interfaces.",
-      "Connecting mobile thinking with web-friendly presentation and portfolios.",
-    ],
-  },
+
 ];
 
 export const projects = [
@@ -201,6 +214,113 @@ export const projects = [
       "Developed a multi-service platform connecting users with service providers, business owners, and event managers.",
       "Built real-time service booking and management features with seamless API integration.",
       "Enhanced UX with responsive UI, secure authentication, and streamlined category navigation.",
+    ],
+  },
+  {
+    name: "Umrah & Hajj Pilot - GPS Tracking App",
+    year: "2025",
+    align: "right",
+    apkLink: "https://github.com/mursalin49/umra-and-hajj-pilot/releases/tag/v1.0.0",
+    githubLink: "https://github.com/mursalin49/umra-and-hajj-pilot",
+    type: "Flutter, Kotlin, Google Maps SDK, Activity Recognition API",
+    accent: "cyan",
+    visualLabel: "GPS Track",
+    gallery: [
+      "/images/Umrah1.png",
+      "/images/Umrah2.png",
+      "/images/Umrah3.png",
+      "/images/Umrah4.png",
+    ],
+    description: [
+      "Built a real-time GPS tracking app with background location logging and Google Maps route visualization.",
+      "Implemented activity detection (walking, running, driving) using Android's Activity Recognition API.",
+      "Optimized battery usage with configurable location update intervals and smart connectivity handling.",
+    ],
+  },
+  {
+    name: "HerFitness - Fitness & Trainer Booking App",
+    year: "2025",
+    align: "left",
+    apkLink: "https://github.com/mursalin49/HerFitness/releases/tag/v1.0.1",
+    githubLink: "https://github.com/mursalin49/HerFitness",
+    type: "Flutter, Dart, REST API, In-App Wallet",
+    accent: "orange",
+    visualLabel: "Fitness Hub",
+    gallery: [
+      "/images/HerFitness1.png",
+      "/images/HerFitness2.png",
+      "/images/HerFitness3.png",
+      "/images/HerFitness4.png",
+    ],
+    description: [
+      "Designed dual-role (Member/Trainer) onboarding with identity verification and custom profile setup.",
+      "Built trainer discovery and booking screens supporting both online and in-person sessions.",
+      "Developed an in-app wallet and payment dashboard with transaction history and health assessment modules.",
+    ],
+  },
+  {
+    name: "Jonssony - EMDR Psychology App",
+    year: "2025",
+    align: "right",
+    apkLink: "https://github.com/mursalin49/PsychologyApp/releases/tag/v1.0.0",
+    githubLink: "https://github.com/mursalin49/PsychologyApp",
+    type: "Flutter, Dart, In-App Subscription, Audio/Haptics",
+    accent: "cyan",
+    visualLabel: "Therapy App",
+    gallery: [
+      "/images/emdr1.jpeg",
+      "/images/emdr2.jpeg",
+      "/images/emdr3.jpeg",
+      "/images/emdr4.jpeg",
+    ],
+    description: [
+      "Developed an EMDR (Eye Movement Desensitization & Reprocessing) therapy app with guided bilateral stimulation for trauma and anxiety management.",
+      "Built a freemium model with free tier (guided EMDR sessions, breathing exercises, grounding practices) and premium subscription unlocking advanced tools.",
+      "Implemented full multi-sensory bilateral stimulation in premium with advanced visual light-bar patterns, 3D spatial bilateral audio, and haptic feedback.",
+      "Integrated AI-driven mood insights to track users' emotional journey over time.",
+    ],
+  },
+  {
+    name: "Naibirly - Service Marketplace Platform",
+    year: "2025",
+    align: "left",
+    apkLink: "https://github.com/mursalin49/service-marketplace-platform/releases/tag/v1.0.1",
+    githubLink: "https://github.com/mursalin49/service-marketplace-platform",
+    type: "Flutter, GetX (MVVM), REST API, OTP Auth, GetStorage",
+    accent: "orange",
+    visualLabel: "Marketplace",
+    gallery: [
+      "/images/naibrily1.jpeg",
+      "/images/naibrily2.jpeg",
+      "/images/naibrily3.jpeg",
+      "/images/naibrily4jpeg.jpeg",
+    ],
+    description: [
+      "Built a dual-user marketplace with distinct Customer (discovery, booking, notifications) and Provider (gig setup, rate config, team/employee management) workflows.",
+      "Implemented reactive MVVM architecture with GetX for real-time order status, notifications, and clean dependency injection.",
+      "Developed category-based service search/filtering with CachedNetworkImage-optimized provider portfolios.",
+    ],
+  },
+  {
+    name: "Avishal - Aircraft Audit System",
+    year: "2024",
+    align: "right",
+    apkLink: "https://github.com/mursalin49/aircraft_audit_system/releases/tag/v1.0.0",
+    githubLink: "https://github.com/mursalin49/aircraft_audit_system",
+    type: "Flutter, Dart, Role-Based Access Control, PDF Reporting",
+    accent: "cyan",
+    visualLabel: "Audit System",
+    gallery: [
+      "/images/avishal1.png",
+      "/images/avishal2.png",
+      "/images/avishal3.png",
+      "/images/avishal4.png",
+    ],
+    description: [
+      "Implemented role-based permission management with off-canvas forms for granular, checkbox-driven feature access control.",
+      "Built role-filtered dashboards and tab views (Home, Audit, Report) shown per user permission (Inspector, Auditor, Admin).",
+      "Developed flight schedule audit forms with departure/arrival time tracking and manual field inputs.",
+      "Built submission history search and filtering by departure or flight number for historical audit lookup.",
     ],
   },
   {

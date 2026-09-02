@@ -5,4 +5,5 @@
 
 body {
   @apply bg-darkBrown antialiased;
+  background: #070a0d;
 }
